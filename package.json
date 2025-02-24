@@ -1,11 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start"
+    "dotenvx": "dotenvx",
+    "dev": "dotenvx run -- next dev --turbopack",
+    "build": "dotenvx run -- next build",
+    "start": "dotenvx run -- next start"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.38.2",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
