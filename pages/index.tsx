@@ -1,3 +1,15 @@
-export default function Page() {
-  return <h1>Hello {process.env.NEXT_PUBLIC_HELLO}</h1>;
+import * as dotenvx from '@dotenvx/dotenvx';
+
+export default function Page({ hello }: { hello: string }) {
+  return <h1>Hello {hello}</h1>;
+}
+
+export function getServerSideProps() {
+  const hello = dotenvx.get('HELLO')
+
+  return {
+    props: {
+      hello,
+    },
+  };
 }
